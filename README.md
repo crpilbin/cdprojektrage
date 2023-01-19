@@ -1,6 +1,6 @@
 # cdprojektrage
 Streets of Rage Clone
 
-npm i
-npm run build
-npm start
+npm i <br />
+npm run build <br />
+npm start <br />
