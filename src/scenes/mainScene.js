@@ -1,15 +1,32 @@
-import logoImg from '../assets/logo.png';
+/**
+ * CDProjektRage
+ * 
+ * @TODO
+ * -----
+ * 
+ * - Build a responsive scene to work on all devices [ 16 : 9 ]
+ * - Create & add a reusable input controller [ Keys, Gamepad ]
+ * - Create a player sprite to control
+ * 
+ * @TOSOLVES
+ * ---------
+ * - Do we need physics & how if we are moving the ground on the Y axis
+ * -- Invisible game object following each physics sprite? [ Player, Enemy... ]
+ * 
+ */
+
+//import logoImg from '../assets/logo.png';
 
 export default class MainScene extends Phaser.Scene
 {
     constructor ()
     {
-        super();
+        super("MainScene");
     }
 
     preload ()
     {
-        this.load.image('logo', logoImg);
+        //this.load.image('logo', logoImg);
     }
       
     create ()
