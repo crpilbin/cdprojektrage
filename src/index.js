@@ -1,10 +1,13 @@
 import Phaser from 'phaser';
 import MainScene from './scenes/mainScene.js';
 
+const screenBuffer = 100;
+
 const config = {
     type: Phaser.AUTO,
-    width: window.innerWidth * window.devicePixelRatio,
-    height: window.innerHeight * window.devicePixelRatio,
+    parent: 'view',
+    width: window.innerWidth - screenBuffer,
+    height: (window.innerWidth - screenBuffer) / 16 * 9,
     scene: MainScene,
     physics: {
         default: 'arcade',
