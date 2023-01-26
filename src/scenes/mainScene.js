@@ -13,8 +13,13 @@
  * -- Invisible game object following each physics sprite? [ Player, Enemy... ]
  * 
  */
+// Controllers
+import CharacterController from '../components/characterController.js';
 
+// Assets
 import playerSprite from '../assets/brawler48x48.png';
+
+
 
 export default class MainScene extends Phaser.Scene
 {
@@ -43,27 +48,13 @@ export default class MainScene extends Phaser.Scene
 
         this.playerCharacter.setCollideWorldBounds(true);
 
-        this.cursors = this.input.keyboard.createCursorKeys();
+        this.charactorController = new CharacterController(this);
         
     }
 
-    update () {
+    update (time, deltaTime) {
         
-        if (this.cursors.left.isDown) {
-            this.playerCharacter.setVelocityX(-160);
-            this.playerCharacter.flipX = false;
-        }
-        else if (this.cursors.right.isDown) {
-            this.playerCharacter.setVelocityX(160);
-            this.playerCharacter.flipX = true;
-        }
-        else {
-            this.playerCharacter.setVelocityX(0);
-        }
-
-        if (this.cursors.space.isDown){//} && this.playerCharacter.body.touching.down) {
-            this.playerCharacter.setVelocityY(-330);
-        }
+        this.charactorController.move(this.playerCharacter);
         
     }
 }

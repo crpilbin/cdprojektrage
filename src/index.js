@@ -8,6 +8,9 @@ const config = {
     parent: 'view',
     width: window.innerWidth - screenBuffer,
     height: (window.innerWidth - screenBuffer) / 16 * 9,
+    input: {
+        gamepad: true
+    },
     scene: MainScene,
     physics: {
         default: 'arcade',
