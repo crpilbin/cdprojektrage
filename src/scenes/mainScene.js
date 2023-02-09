@@ -1,17 +1,10 @@
 /**
- * CDProjektRage
+ * A Base Scene
  * 
- * @TODO
- * -----
+ * Register game objects here and add them to the sceneObject array so they call their 
+ * own create and updates.
  * 
- * -- Register objects that need to use the update function, need to include delta time
- *   
- * -- How to broadcast to other objects in the program
- * 
- * 
- * 
- * - Create & add a reusable input controller [ Keys, Gamepad ]
- * - Create a player sprite to control
+ * - Do we need to register events and broadcast to other objects in the program from here?
  * 
  * @TOSOLVES
  * ---------
@@ -19,6 +12,7 @@
  * -- Invisible game object following each physics sprite? [ Player, Enemy... ]
  * 
  */
+
 // Controllers
 import CharacterController from '../components/characterController.js';
 

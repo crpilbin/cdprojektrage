@@ -1,39 +1,45 @@
+/**
+* Character Controller
+* 
+* Build the player here, deal with the sprite....
+*
+* Import an input manager? animation manager?
+* - Create & add a reusable input controller [ Keys, Gamepad ]
+* - Dynamic data needs to live elsewhere, let's get a reusable class
+*
+* Questions
+* - Collisions?
+*
+*/
 
-// Import an input manager as all input are used in this class
+// Import Class Managers like input / animation
+import InputManager from '../components/inputManager.js';
 
-//import { debug } from "webpack";
-
-// Maybe we need to integrate that here, we can't use a lerp to move
-
-// We need to have a base level so this can be reusable as a class
-
-
-
-
+// Import assets
 
 
 export default class CharacterController {
 
-    /**
-     *  Character controller
-     * 
-     * Like UNITY
-     * 
-     * Pulls in from a global input manager
-     * Takes in the character
-     * Animations
-     * 
-     * Updates via a callback from update
-     * 
-     * Start with values we need, postion, transform etc
-     * 
-     */
-
     // This needs to init the class, register the managers like input & anim etc
+    /**
+    * Init the class with parameters like other engines [unity]
+    * 
+    * - Transform
+    * - Sprite
+    * - Physics
+    *  
+    */
     constructor (scene) {
 
         this.scene = scene;
 
+        this.input = new InputManager(scene);
+
+        // Variables
+
+
+
+        // MOVE THIS SHIT TO AN IMPORTED INPUT CLASS
         // Add support for keys & gamepad
         scene.input.gamepad.once('connected', function (pad) {
             console.log('connected', pad.id);
@@ -62,6 +68,12 @@ export default class CharacterController {
         console.log("CC Create");
     }
 
+    update () {
+        console.log(this.input.getInput());
+
+
+    }
+
     move (character) {
 
         // This method needs to request the input and do the moving
@@ -74,9 +86,7 @@ export default class CharacterController {
             character.setVelocityX(-160);
             character.flipX = false;
 
-            this.scene.sceneCallback(function(){
-                this.playerCharacter.play('kick')
-            });
+            
         }
         else if (this.cursors.right.isDown) {
             character.setVelocityX(160);

@@ -1,7 +1,11 @@
 /**
 * CDProjektRage
-* 
+* -------------
 * The entry point for the game.
+*
+* @TODO
+* - Look into responsive screen sizing.
+* 
 */
 
 import Phaser from 'phaser';
