@@ -1,3 +1,9 @@
+/**
+* CDProjektRage
+* 
+* The entry point for the game.
+*/
+
 import Phaser from 'phaser';
 import MainScene from './scenes/mainScene.js';
 
